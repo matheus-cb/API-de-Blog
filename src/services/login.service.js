@@ -1,5 +1,5 @@
-const { User } = require('../models');
 const jwt = require('jsonwebtoken');
+const { User } = require('../models');
 
 const secret = process.env.JWT_SECRET || 'secretPassword';
 
@@ -9,7 +9,8 @@ const login = async (email, password) => {
   if (!user) {
     return {
       status: 400, data: { message: 'Invalid fields' },
-    } };
+    };
+  }
 
   const jwtConfig = { 
     algorithm: 'HS256',
