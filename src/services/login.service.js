@@ -1,7 +1,5 @@
-const jwt = require('jsonwebtoken');
 const { User } = require('../models');
-
-const secret = process.env.JWT_SECRET || 'secretPassword';
+const { createToken } = require('../auth/authfunctions');
 
 const login = async (email, password) => {
   const user = await User.findOne({ where: { email, password } });
@@ -12,10 +10,7 @@ const login = async (email, password) => {
     };
   }
 
-  const jwtConfig = { 
-    algorithm: 'HS256',
-  };
-  const token = jwt.sign({ data: { email } }, secret, jwtConfig);
+  const token = createToken({ id: user.id, email: user.email });
 
   return {
     status: 200,

@@ -1,6 +1,6 @@
 const route = require('express').Router();
 const { loginController } = require('../controllers');
-const loginMiddleware = require('../middlewares/login.middlewares');
+const { loginMiddleware } = require('../middlewares');
 
 route.post(
   '/',
