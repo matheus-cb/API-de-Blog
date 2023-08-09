@@ -29,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
     },
   }, {
     timestamps: false, // Não cria colunas createdAt e updatedAt
-    tableName: 'BlogPosts', // Nome da tabela
+    tableName: 'blog_posts', // Nome da tabela
     underscored: true, // CamelCase para snake_case
   });
 
