@@ -4,8 +4,8 @@ const { categoryMiddleware, authMiddleware } = require('../middlewares');
 
 route.post(
   '/', 
-  categoryMiddleware.validateInputNameProduct, 
   authMiddleware.validateToken, 
+  categoryMiddleware.validateInputNameProduct, 
   categoryController.createCategory,
 );
 

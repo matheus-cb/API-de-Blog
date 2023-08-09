@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
   const Category = sequelize.define('Category', {
     id: {
-      allowNull: false, // Não permite nulo
+      // allowNull: false, // Não permite nulo
       autoIcrement: true, // Define que é autoincremento
       primaryKey: true, // Define a chave primária
       type: DataTypes.INTEGER, // Define o tipo de dado
